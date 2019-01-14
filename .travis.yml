@@ -11,7 +11,10 @@ addon:
     packages:
       - lib32stdc++6
 install:
-  - git clone https://github.com/flutter/flutter.git -b beta
+  - |
+    if [ ! -d flutter ] ; then
+      git clone https://github.com/flutter/flutter.git -b beta
+    fi
   - ./flutter/bin//flutter doctor
 script:
   - cd app
